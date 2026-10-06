@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#172b27" />
+    <meta name="description" content="A garden wedding invitation." />
+    <title>Wedding Invitation</title>
+    <link rel="preload" as="image" href="assets/cover.webp" fetchpriority="high" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="stage" aria-label="Wedding invitation">
+      <div class="stage__ambient" aria-hidden="true"></div>
+
+      <section class="invite" aria-label="Wedding invitation pages">
+        <div class="invite__viewport" id="viewport" aria-live="polite" aria-atomic="true"></div>
+        <div class="petals" id="petals" aria-hidden="true"></div>
+
+        <button class="music-toggle" id="music-toggle" type="button" aria-label="Turn on background music" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h3l4 3V7l-4 3H4Z" /><path class="music-toggle__wave" d="M15 9a4 4 0 0 1 0 6M17.5 6.5a7.5 7.5 0 0 1 0 11" /><path class="music-toggle__mute" d="m15 9 5 6m0-6-5 6" /></svg>
+          <span id="music-label">Music off</span>
+        </button>
+
+        <nav class="controls" aria-label="Invitation pages">
+          <button class="controls__arrow" id="previous" type="button" aria-label="Previous page" disabled>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 5-7 7 7 7" /></svg>
+          </button>
+          <div class="controls__dots" id="dots" role="group" aria-label="Choose a page"></div>
+          <button class="controls__arrow" id="next" type="button" aria-label="Next page">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 5 7 7-7 7" /></svg>
+          </button>
+        </nav>
+        <p class="controls__count" id="count" aria-hidden="true"></p>
+        <div class="curtain-intro" id="curtain-intro" aria-label="Welcome">
+          <video class="curtain-intro__video" id="curtain-video" muted playsinline preload="auto" poster="assets/curtain-poster.webp" aria-hidden="true">
+            <source src="assets/curtain-opening.webm" type='video/webm; codecs="vp9"' />
+          </video>
+          <div class="curtain-intro__panel curtain-intro__panel--left" aria-hidden="true"></div>
+          <div class="curtain-intro__panel curtain-intro__panel--right" aria-hidden="true"></div>
+          <div class="curtain-intro__valance" aria-hidden="true"></div>
+          <div class="curtain-intro__welcome">
+            <span class="curtain-intro__ornament" aria-hidden="true">✦</span>
+            <p>A celebration awaits</p>
+            <button class="curtain-intro__button" id="open-curtain" type="button">Open the curtains</button>
+            <span class="curtain-intro__hint">Tap to begin</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
